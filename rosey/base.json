@@ -1,8 +1,8 @@
 {
   "version": 2,
   "keys": {
-    "astro-rosey-starter": {
-      "original": " Astro Rosey Starter ",
+    "astro-bookshop-starter": {
+      "original": " Astro Bookshop Starter ",
       "value": null,
       "pages": {
         "index.html": 1
