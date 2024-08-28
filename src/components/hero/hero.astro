@@ -1,8 +1,8 @@
 ---
-import type { ImageMetadata } from 'astro';
-import { Image } from 'astro:assets';
-import Markdown from '../utility/markdown.astro';
-import slugify from 'slugify';
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import Markdown from "../utility/markdown.astro";
+import slugify from "slugify";
 
 const generateRoseyID = (text: string) => {
   const lowerCaseText = text.toLowerCase();
@@ -14,21 +14,29 @@ const generateRoseyID = (text: string) => {
 };
 const generateStaticRoseyId = (text: string) => {
   const pageName =
-    Astro.url.pathname === '/'
-      ? 'home'
-      : Astro.url.pathname?.replace('/index.html', '').replaceAll('/', '');
+    Astro.url.pathname === "/"
+      ? "home"
+      : Astro.url.pathname?.replace("/index.html", "").replaceAll("/", "");
 
-  const keyNumber = Astro.props.key || '1';
+  const keyNumber = Astro.props.key || "1";
   return `${text}-${pageName}-${keyNumber}`;
 };
 interface Props {
   background_color: string;
   heading: {
-    heading_text: string;
+    heading_text: {
+      original: string;
+      selected_translation: string;
+      es_translation: string;
+    };
     heading_gradient_color: string;
   };
   subheading: {
-    markdown_content: string;
+    markdown_content: {
+      original: string;
+      selected_translation: string;
+      es_translation: string;
+    };
     color: string;
   };
   image: {
@@ -49,11 +57,11 @@ interface Props {
 }
 
 const block = Astro.props;
-const buttons = import.meta.glob('/src/components/buttons/**/*.astro', {
+const buttons = import.meta.glob("/src/components/buttons/**/*.astro", {
   eager: true,
 });
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/**/*.{jpeg,jpg,png,gif}',
+  "/src/assets/**/*.{jpeg,jpg,png,gif}",
   { eager: true }
 );
 
@@ -68,20 +76,32 @@ const headingGradientColor = block.heading.heading_gradient_color;
     <div class="content">
       <h1
         class="heading"
-        data-rosey={generateRoseyID(block.heading.heading_text)}>
-        {block.heading.heading_text}
+        data-rosey={generateRoseyID(block.heading.heading_text.original)}>
+        {
+          ENV_BOOKSHOP_LIVE &&
+          block.heading.heading_text.selected_translation === "es"
+            ? block.heading.heading_text.es_translation
+            : block.heading.heading_text.original
+        }
       </h1>
       <div class="subheading-text" style={`color: ${block.subheading.color};`}>
         {
           ENV_BOOKSHOP_LIVE ? (
-            <Markdown
-              content={block.subheading.markdown_content}
-              roseyId="hero-subheading"
-            />
+            block.subheading.markdown_content.selected_translation === "es" ? (
+              <Markdown
+                content={block.subheading.markdown_content.es_translation}
+                roseyId="hero-subheading"
+              />
+            ) : (
+              <Markdown
+                content={block.subheading.markdown_content.original}
+                roseyId="hero-subheading"
+              />
+            )
           ) : (
             <Markdown
-              content={block.subheading.markdown_content}
-              roseyId={generateStaticRoseyId('hero-subheading')}
+              content={block.subheading.markdown_content.original}
+              roseyId={generateStaticRoseyId("hero-subheading")}
             />
           )
         }
@@ -89,7 +109,7 @@ const headingGradientColor = block.heading.heading_gradient_color;
       <div class="buttons">
         {
           block.buttons.map((button) => {
-            const name = button._bookshop_name.split('/').reverse()[0];
+            const name = button._bookshop_name.split("/").reverse()[0];
             const filePath = `/src/components/buttons/${name}/${name}.astro`;
             const Component = (buttons[filePath] as any)?.default;
             return <Component {...button} />;

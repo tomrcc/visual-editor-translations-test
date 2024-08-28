@@ -18,19 +18,25 @@ content_blocks:
   - _bookshop_name: hero
     background_color: "#ffffff"
     heading:
-      heading_text: Astro Rosey Starter
+      heading_text:
+        original: Astro Bookshop Starter
+        selected_translation: None
+        es_translation: Astro Bookshop Starter Spanish Translation
       heading_gradient_color: "#a0a2ff"
     subheading:
-      markdown_content: >-
-        A starting point for **developers looking to build a multilingual
-        website with [Astro](https://astro.build/) and
-        [Rosey](https://rosey.app/), using
-        [Bookshop](https://github.com/CloudCannon/bookshop)'s component-based
-        approach to building and editing sites in CloudCannon**. After a
-        developer has set up the site, CloudCannon provides a user interface for
-        non-technical editors to maintain the site's content and enter
-        translations. Create your own copy, and start creating your own
-        components to use in the CloudCannon CMS.
+      markdown_content:
+        original: >-
+          A starting point for **developers looking to build a multilingual
+          website with [Astro](https://astro.build/) and
+          [Rosey](https://rosey.app/), using
+          [Bookshop](https://github.com/CloudCannon/bookshop)'s component-based
+          approach to building and editing sites in CloudCannon**. After a
+          developer has set up the site, CloudCannon provides a user interface for
+          non-technical editors to maintain the site's content and enter
+          translations. Create your own copy, and start creating your own
+          components to use in the CloudCannon CMS.
+        selected_translation: None
+        es_translation: A TRANSLATED point TRANSLATED **developers TRANSLATED** to build a TRANSLATED with Astro, using TRANSLATED components in TRANSLATED.
       color: "#393939"
     image:
       image_path: /src/assets/images/featured-image-5.jpg
