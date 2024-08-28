@@ -131,6 +131,8 @@ collection_groups:
       - data
       - translations
 _inputs:
+  es_translation:
+    type: text
   selected_translation:
     type: select
     options:
