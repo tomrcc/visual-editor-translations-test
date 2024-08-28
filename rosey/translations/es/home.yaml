@@ -10,6 +10,8 @@ _inputs:
           comment: Text to translate on [](http://localhost:4321/)
           inputs:
             - astro-bookshop-starter
+            - static:hero-subheading-home-2
+            - static:left-right-text-home-3
         - heading: Already translated (es)
           comment: Text already translated on [](http://localhost:4321/)
           inputs:
@@ -95,6 +97,52 @@ _inputs:
         non-technical editors to maintain the site's content and enter
         translations. Create your own copy, and start creating your own
         components to use in the CloudCannon CMS.
+  static:hero-subheading-home-2:
+    label: A starting point for developers looking to...
+    hidden: false
+    type: markdown
+    options:
+      bold: true
+      format: p h1 h2 h3 h4
+      italic: true
+      link: true
+      undo: true
+      redo: true
+      removeformat: true
+      copyformatting: true
+      bulletedlist: true
+      numberedlist: true
+      blockquote: true
+      superscript: true
+      subscript: true
+      code: true
+      horizontalrule: true
+      image: true
+    comment: >-
+      Added: A starting point for developers looking to build a multilingual
+      website with Astro and Rosey, using Bookshop's component-based approach to
+      building and editing sites in CloudCannon. After a developer has set up
+      the site, CloudCannon provides a user interface for non-technical editors
+      to maintain the site's content and enter translations. Create your own
+      copy, and start creating your own components to use in the CloudCannon
+      CMS.
+
+
+      [See on
+      page](http://localhost:4321/#:~:text=A%20starting%20point,the%20CloudCannon%20CMS)
+    context:
+      open: false
+      title: Untranslated Text
+      icon: translate
+      content: A starting point for **developers looking to build a multilingual
+        website with [Astro](https://astro.build/) and
+        [Rosey](https://rosey.app/), using
+        [Bookshop](https://github.com/CloudCannon/bookshop)'s component-based
+        approach to building and editing sites in CloudCannon**. After a
+        developer has set up the site, CloudCannon provides a user interface for
+        non-technical editors to maintain the site's content and enter
+        translations. Create your own copy, and start creating your own
+        components to use in the CloudCannon CMS.
   static:left-right-text-home-1:
     label: As well as a translations workflow, some f...
     hidden: false
@@ -150,6 +198,70 @@ _inputs:
         * CloudCannon configuration
 
         * CSS variables
+  static:left-right-text-home-3:
+    label: As well as a translations workflow, some f...
+    hidden: false
+    type: markdown
+    options:
+      bold: true
+      format: p h1 h2 h3 h4
+      italic: true
+      link: true
+      undo: true
+      redo: true
+      removeformat: true
+      copyformatting: true
+      bulletedlist: true
+      numberedlist: true
+      blockquote: true
+      superscript: true
+      subscript: true
+      code: true
+      horizontalrule: true
+      image: true
+    comment: >-
+      Added: As well as a translations workflow, some features come already set
+      up in this template to help you start building components quickly, like:
+      Bookshop Blog with pagination and tags Image optimization SEO Controls
+      Responsive header and footer Font Awesome Icons Schemas for adding new
+      pages Editable color pallete Markdown styles CloudCannon configuration CSS
+      variables
+
+
+      [See on
+      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)
+    context:
+      open: false
+      title: Untranslated Text
+      icon: translate
+      content: >-
+        As well as a translations workflow, some features come already set up in
+        this template to help you start building components quickly, like:
+
+
+        *
+        [Bookshop](https://cloudcannon.com/documentation/guides/bookshop-astro-guide/)
+
+        * Blog with pagination and tags
+
+        * [Image
+        optimization](https://docs.astro.build/en/guides/images/#image--astroassets)
+
+        * SEO Controls
+
+        * Responsive header and footer
+
+        * [Font Awesome Icons](https://fontawesome.com/search?o=r&m=free)
+
+        * Schemas for adding new pages
+
+        * Editable color pallete
+
+        * Markdown styles
+
+        * CloudCannon configuration
+
+        * CSS variables
 astro-bookshop-starter: ""
 blog: Blog
 cloudcannon: CloudCannon
@@ -162,6 +274,7 @@ static:hero-subheading-home-1: Un punto de partida para **desarrolladores que
   de usuario para que los editores no técnicos ingresen traducciones. Cree su
   propia copia y comience a crear sus propios componentes para usar en
   CloudCannon CMS.
+static:hero-subheading-home-2: ""
 static:left-right-text-home-1: >-
   Para ayudarle a ahorrar tiempo, algunas funciones están configuradas en esta
   plantilla, como:
@@ -192,3 +305,4 @@ static:left-right-text-home-1: >-
   * Configuración de CloudCannon
 
   * Variables CSS
+static:left-right-text-home-3: ""
