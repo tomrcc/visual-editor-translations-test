@@ -255,26 +255,40 @@ function generateLocationString(originalPhraseTidied, page) {
     : `[See on page](${baseURL}${pageString}#:~:text=${encodedOriginalPhrase})`;
 }
 
-function getObjValueFromNestedStructure(structure, keyToLookFor) {
+function getObjWithPathFromNestedStructure(structure, keyToLookFor, path) {
   // Arrays will also return true for typeof object
   if (!structure || typeof structure !== "object") {
     return false;
   }
+  // path = path || "";
+  // The path needs to become the structure we're in
+  // Check if path[structure] is what we're in
+  // Have to check if the keys are the same because objects are checked for eq by reference, not value
+
   // Check if something is a structure like array or obj
   // If it's an object
   if (!Array.isArray(structure)) {
     const objectKeys = Object.keys(structure);
     // Check if it has the key: value, and return the value if it does
     if (objectKeys.includes(keyToLookFor)) {
-      console.log("This includes the right key", structure[keyToLookFor]);
-      return structure[keyToLookFor];
+      console.log(
+        `This includes the right key, ${structure[keyToLookFor]} at ${path}`
+      );
+      // Return the whole object that contained it, and the path to that object
+      return {
+        structure: structure,
+        path: path,
+      };
     } else {
       // If not, loop through the other keys in objectKeys and check if they're typeof obj
       // if they are recursively call this fn with the key
       for (let i = 0; i < objectKeys.length; i++) {
-        const result = getObjValueFromNestedStructure(
+        const key = objectKeys[i];
+        let currentPath = path !== "" ? `${path}.${key}` : key;
+        const result = getObjWithPathFromNestedStructure(
           structure[objectKeys[i]],
-          keyToLookFor
+          keyToLookFor,
+          currentPath
         );
         if (result) {
           return result;
@@ -285,7 +299,12 @@ function getObjValueFromNestedStructure(structure, keyToLookFor) {
     // Don't check for key: value since we are in array
     // Just look if each item is typeof object and recursively call this fn on the array item if it is
     for (let i = 0; i < structure.length; i++) {
-      const result = getObjValueFromNestedStructure(structure[i], keyToLookFor);
+      let currentPath = `${path}[${i}]`;
+      const result = getObjWithPathFromNestedStructure(
+        structure[i],
+        keyToLookFor,
+        currentPath
+      );
       if (result) {
         return result;
       }
@@ -314,9 +333,10 @@ async function readContentDirTranslations(contentDirectory, locale) {
 
         if (fileFrontMatter.content_blocks) {
           fileFrontMatter.content_blocks.forEach((block) => {
-            const translationValue = getObjValueFromNestedStructure(
+            const translationValue = getObjWithPathFromNestedStructure(
               block,
-              "es_translation"
+              "es_translation",
+              ""
             );
             console.log("Translation Value", translationValue);
           });
