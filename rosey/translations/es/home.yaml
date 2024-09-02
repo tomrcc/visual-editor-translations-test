@@ -13,7 +13,6 @@ _inputs:
             - github
             - hero-subheading
             - left-right-text
-            - qrktrBgMTiPGcMSVOTmJ9lJGgkWViU6tyOFzsbTycl4
         - heading: Already translated (es)
           comment: Text already translated on [](http://localhost:4321/)
           inputs:
@@ -67,11 +66,13 @@ _inputs:
         translations. Create your own copy, and start creating your own
         components to use in the CloudCannon CMS.
   keep-what-you-need-delete-the-rest:
-    label: ""
-    hidden: true
-    type: text
+    label: Keep what you need. Delete the rest.
+    hidden: false
+    type: textarea
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=)"
+    comment: "[See on
+      page](http://localhost:4321/#:~:text=Keep%20what%20you,Delete%20the%20res\
+      t)"
   left-right-text:
     label: As well as a translations workflow, some f...
     hidden: false
@@ -111,12 +112,6 @@ _inputs:
         * CloudCannon configuration
 
         * CSS variables
-  qrktrBgMTiPGcMSVOTmJ9lJGgkWViU6tyOFzsbTycl4:
-    label: ""
-    hidden: true
-    type: text
-    options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=)"
   rss-feed:
     label: RSS Feed
     hidden: false
@@ -130,5 +125,4 @@ github: ""
 hero-subheading: ""
 keep-what-you-need-delete-the-rest: This finally showed and is hopefully going to update the frontmatter for the VE
 left-right-text: ""
-qrktrBgMTiPGcMSVOTmJ9lJGgkWViU6tyOFzsbTycl4: ""
 rss-feed: RSS Feed
