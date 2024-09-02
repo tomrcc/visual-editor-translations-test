@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-npx @bookshop/generate
 
 if [[ $TRANSLATE != "true" ]];
 then
@@ -12,10 +11,16 @@ then
   echo "🌹Generating translation files from base.json"
   node utils/generateTranslationFiles.cjs
   echo "🌹Generated translation files to be edited"
+  echo "🌹Syncing frontmatter with translation data files"
+  node utils/syncFrontMatter.cjs
+  echo "🌹Synced new translations from frontmatter and data files"
   echo "🌹Generating the locales files Rosey needs from our translation files"
   node utils/generateLocales.cjs
   echo "🌹Generated locales"
 fi
+
+npx @bookshop/generate
+
 
 if [[ $TRANSLATE == "true" ]];
 then

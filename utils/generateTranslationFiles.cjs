@@ -22,7 +22,6 @@ const inputFilePath = "./rosey/base.json";
 const inputURLFilePath = "./rosey/base.urls.json";
 const translationFilesDirPath = "./rosey/translations";
 const localesDirPath = "./rosey/locales";
-const contentDirPath = "./src/content/pages/";
 
 const baseURL = process.env.BASEURL || "http://localhost:4321/";
 const locales = process.env.LOCALES?.toLowerCase().split(",") || ["es"];
@@ -255,107 +254,12 @@ function generateLocationString(originalPhraseTidied, page) {
     : `[See on page](${baseURL}${pageString}#:~:text=${encodedOriginalPhrase})`;
 }
 
-function getObjWithPathFromNestedStructure(structure, keyToLookFor, path) {
-  // Arrays will also return true for typeof object
-  if (!structure || typeof structure !== "object") {
-    return false;
-  }
-  // path = path || "";
-  // The path needs to become the structure we're in
-  // Check if path[structure] is what we're in
-  // Have to check if the keys are the same because objects are checked for eq by reference, not value
-
-  // Check if something is a structure like array or obj
-  // If it's an object
-  if (!Array.isArray(structure)) {
-    const objectKeys = Object.keys(structure);
-    // Check if it has the key: value, and return the value if it does
-    if (objectKeys.includes(keyToLookFor)) {
-      console.log(
-        `This includes the right key, ${structure[keyToLookFor]} at ${path}`
-      );
-      // Return the whole object that contained it, and the path to that object
-      return {
-        structure: structure,
-        path: path,
-      };
-    } else {
-      // If not, loop through the other keys in objectKeys and check if they're typeof obj
-      // if they are recursively call this fn with the key
-      for (let i = 0; i < objectKeys.length; i++) {
-        const key = objectKeys[i];
-        let currentPath = path !== "" ? `${path}.${key}` : key;
-        const result = getObjWithPathFromNestedStructure(
-          structure[objectKeys[i]],
-          keyToLookFor,
-          currentPath
-        );
-        if (result) {
-          return result;
-        }
-      }
-    }
-  } else {
-    // Don't check for key: value since we are in array
-    // Just look if each item is typeof object and recursively call this fn on the array item if it is
-    for (let i = 0; i < structure.length; i++) {
-      let currentPath = `${path}[${i}]`;
-      const result = getObjWithPathFromNestedStructure(
-        structure[i],
-        keyToLookFor,
-        currentPath
-      );
-      if (result) {
-        return result;
-      }
-    }
-  }
-}
-
-async function readContentDirTranslations(contentDirectory, locale) {
-  const contentDirectoryFiles = await fs.promises.readdir(contentDirectory, {
-    recursive: true,
-  });
-
-  // Look through each file for translations
-  contentDirectoryFiles.forEach(async (filename) => {
-    try {
-      const filePath = path.join(contentDirectory, filename);
-      const fileStats = await fs.promises.stat(filePath);
-      const isFileDirectory = fileStats.isDirectory();
-      if (isFileDirectory) {
-        console.log("This is a dir (not a file), skipping read");
-      } else {
-        const buffer = await fs.promises.readFile(filePath);
-        const fileData = buffer.toString("utf-8");
-        const fileDataFrontMatterWithContent = fileData.split("---")[1];
-        const fileFrontMatter = YAML.parse(fileDataFrontMatterWithContent);
-
-        if (fileFrontMatter.content_blocks) {
-          fileFrontMatter.content_blocks.forEach((block) => {
-            const translationValue = getObjWithPathFromNestedStructure(
-              block,
-              "es_translation",
-              ""
-            );
-            console.log("Translation Value", translationValue);
-          });
-        }
-      }
-    } catch (err) {
-      throw err;
-    }
-  });
-}
-
-async function main(locale) {
+async function generateLocaleTranslationFiles(locale) {
   // Get the Rosey generated data
   const localePath = path.join(localesDirPath, `${locale}.json`);
   const oldLocaleData = await readJsonFromFile(localePath);
   const inputFileData = await readJsonFromFile(inputFilePath);
   const inputURLFileData = await readJsonFromFile(inputURLFilePath);
-
-  await readContentDirTranslations(contentDirPath, locale);
 
   const pages = Object.keys(inputURLFileData.keys);
 
@@ -406,6 +310,7 @@ async function main(locale) {
         `${pageName}.yaml`
       );
 
+      // Things we will use to write to files later
       let cleanedOutputFileData = {};
 
       // Ensure nested pages have parent folders
@@ -427,7 +332,7 @@ async function main(locale) {
         translationFilePath,
         "_inputs: {}"
       );
-      const translationFileData = await YAML.parse(translationFileString);
+      const translationFileData = YAML.parse(translationFileString);
 
       // Create the url key
       if (translationFileData["urlTranslation"]?.length > 0) {
@@ -439,42 +344,46 @@ async function main(locale) {
 
       initDefaultInputs(cleanedOutputFileData, page, locale);
 
-      Object.keys(inputFileData.keys).forEach((inputKey) => {
-        const inputTranslationObj = inputFileData.keys[inputKey];
-        // If input exists on this page
-        if (!inputTranslationObj.pages[page]) {
-          return;
-        }
+      const inputFileDataKeys = Object.keys(inputFileData.keys);
+      // Loop through page keys
+      await Promise.all(
+        inputFileDataKeys.map(async (inputKey) => {
+          const inputTranslationObj = inputFileData.keys[inputKey];
+          // If input exists on this page
+          if (!inputTranslationObj.pages[page]) {
+            return;
+          }
 
-        // Only add the key to our output data if it still exists in base.json
-        // If entry no longer exists in base.json it's content has changed in the visual editor
-        if (translationFileData[inputKey]) {
-          cleanedOutputFileData[inputKey] = translationFileData[inputKey];
-        }
+          // Only add the key to our output data if it still exists in base.json
+          // If entry no longer exists in base.json it's original has changed and become a new key
+          if (translationFileData[inputKey]) {
+            cleanedOutputFileData[inputKey] = translationFileData[inputKey];
+          }
 
-        // If entry doesn't exist in our output file, add it
-        if (!cleanedOutputFileData[inputKey]) {
-          cleanedOutputFileData[inputKey] = "";
-        }
+          // If entry doesn't exist in our output file, add it
+          if (!cleanedOutputFileData[inputKey]) {
+            cleanedOutputFileData[inputKey] = "";
+          }
 
-        cleanedOutputFileData["_inputs"][inputKey] = getInputConfig(
-          inputKey,
-          page,
-          inputTranslationObj,
-          oldLocaleData
-        );
-
-        // Add each entry to page object group depending on whether they are translated or not
-        if (cleanedOutputFileData[inputKey].length > 0) {
-          cleanedOutputFileData["_inputs"]["$"].options.groups[1].inputs.push(
-            inputKey
+          cleanedOutputFileData["_inputs"][inputKey] = getInputConfig(
+            inputKey,
+            page,
+            inputTranslationObj,
+            oldLocaleData
           );
-        } else {
-          cleanedOutputFileData["_inputs"]["$"].options.groups[0].inputs.push(
-            inputKey
-          );
-        }
-      });
+
+          // Add each entry to page object group depending on whether they are translated or not
+          if (cleanedOutputFileData[inputKey].length > 0) {
+            cleanedOutputFileData["_inputs"]["$"].options.groups[1].inputs.push(
+              inputKey
+            );
+          } else {
+            cleanedOutputFileData["_inputs"]["$"].options.groups[0].inputs.push(
+              inputKey
+            );
+          }
+        })
+      );
 
       await fs.promises.writeFile(
         translationFilePath,
@@ -485,13 +394,18 @@ async function main(locale) {
   );
 }
 
-// Loop through locales
-for (let i = 0; i < locales.length; i++) {
-  const locale = locales[i];
+(async () => {
+  // Loop through locales
+  for (let i = 0; i < locales.length; i++) {
+    const locale = locales[i];
 
-  main(locale).catch((err) => {
-    console.error(`❌❌ Encountered an error translating ${locale}:`, err);
-  });
-}
-
-module.exports = { main };
+    try {
+      await generateLocaleTranslationFiles(locale);
+    } catch (error) {
+      console.error(
+        `❌❌ Encountered an error generating translation files for ${locale}:`,
+        err
+      );
+    }
+  }
+})();

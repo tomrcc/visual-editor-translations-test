@@ -1,10 +1,14 @@
 ---
-import markdownit from 'markdown-it';
+import markdownit from "markdown-it";
+import slugify from "slugify";
+import RoseyContent from "src/components/utility/roseyContent.astro";
 const md = markdownit({ html: true });
 const { content, roseyId } = Astro.props;
-import slugify from 'slugify';
 
 const generateRoseyID = (text: string) => {
+  if (!text) {
+    return "";
+  }
   const lowerCaseText = text.toLowerCase();
   const formattedText = lowerCaseText.replaceAll(
     /(?:__[*#])|\[(.*?)\]\(.*?\)/gm,
@@ -14,10 +18,24 @@ const generateRoseyID = (text: string) => {
 };
 ---
 
-<!-- This is styled in src/styles/_markdown.scss, which also styles the blog markdown text -->
-<div
-  class="markdown-text"
-  data-rosey-ns="static"
-  data-rosey={generateRoseyID(roseyId)}
-  set:html={md.render(content)}
-/>
+{
+  ENV_BOOKSHOP_LIVE && content.original ? (
+    content.selected_translation === "es" ? (
+      <div class="markdown-text" set:html={md.render(content.es_translation)} />
+    ) : (
+      <div class="markdown-text" set:html={md.render(content.original)} />
+    )
+  ) : content.original ? (
+    <div
+      class="markdown-text"
+      data-rosey={generateRoseyID(roseyId)}
+      set:html={md.render(content.original)}
+    />
+  ) : (
+    <div
+      class="markdown-text"
+      data-rosey={generateRoseyID(roseyId)}
+      set:html={md.render(content)}
+    />
+  )
+}

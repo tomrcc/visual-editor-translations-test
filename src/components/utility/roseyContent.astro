@@ -1,0 +1,9 @@
+---
+const { content } = Astro.props;
+---
+
+{
+  ENV_BOOKSHOP_LIVE && content.selected_translation === "es"
+    ? content.es_translation
+    : content.original
+}

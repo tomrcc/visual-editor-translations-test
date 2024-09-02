@@ -1,32 +1,32 @@
-const fs = require('fs');
-const YAML = require('yaml');
-const markdownit = require('markdown-it');
+const fs = require("fs");
+const YAML = require("yaml");
+const markdownit = require("markdown-it");
 const md = markdownit();
-const path = require('path');
+const path = require("path");
 const {
   isDirectory,
   readFileWithFallback,
-} = require('./helpers/file-helper.cjs');
+} = require("./helpers/file-helper.cjs");
 
-const translationsDirPath = './rosey/translations';
-const localesDirPath = './rosey/locales';
+const translationsDirPath = "./rosey/translations";
+const localesDirPath = "./rosey/locales";
 
-const locales = process.env.LOCALES?.toLowerCase().split(',') || ['es'];
+const locales = process.env.LOCALES?.toLowerCase().split(",") || ["es"];
 
 function getTranslationPath(locale, translationFilename) {
   return path.join(translationsDirPath, locale, translationFilename);
 }
 
 function getTranslationHTMLFilename(translationFilename) {
-  if (translationFilename === '404.yaml') {
-    return '404.html';
+  if (translationFilename === "404.yaml") {
+    return "404.html";
   }
 
-  if (translationFilename === 'home.yaml') {
-    return 'index.html';
+  if (translationFilename === "home.yaml") {
+    return "index.html";
   }
 
-  return translationFilename.replace('.yaml', '/index.html');
+  return translationFilename.replace(".yaml", "/index.html");
 }
 
 function processUrlTranslationKey(
@@ -94,7 +94,7 @@ async function processTranslation(
   const localeData = {};
   const localeURLsData = {};
   const translationsPath = getTranslationPath(locale, translationFilename);
-  const fileContents = await readFileWithFallback(translationsPath, '');
+  const fileContents = await readFileWithFallback(translationsPath, "");
   const translationHTMLFilename =
     getTranslationHTMLFilename(translationFilename);
 
@@ -103,13 +103,13 @@ async function processTranslation(
   // Check if theres a translation and
   // Add each obj to our locales data, excluding '_inputs' object.
   Object.entries(data).forEach(([keyName, translatedString]) => {
-    if (keyName === '_inputs') {
+    if (keyName === "_inputs") {
       return;
     }
 
     // Write entry values to be any translated value that appears in translations files
     // If no value detected, and the locale value is an empty string, write the original to value as a fallback
-    if (keyName === 'urlTranslation') {
+    if (keyName === "urlTranslation") {
       const newEntry = processUrlTranslationKey(
         translatedString,
         translationHTMLFilename,
@@ -121,7 +121,7 @@ async function processTranslation(
         localeURLsData[translationHTMLFilename] = newEntry;
       } else if (
         // Provide a fallback if there's no translated URL so the translated URL isn't a blank string
-        localeURLsData[translationHTMLFilename]?.value === '' ||
+        localeURLsData[translationHTMLFilename]?.value === "" ||
         localeURLsData[translationHTMLFilename]?.value === undefined
       ) {
         return {
@@ -150,10 +150,10 @@ async function processTranslation(
 
 // The generateLocales function runs on each separate locale
 async function generateLocale(locale) {
-  const baseFile = await fs.promises.readFile('./rosey/base.json');
-  const baseFileData = JSON.parse(baseFile.toString('utf-8')).keys;
-  const baseURLsFile = await fs.promises.readFile('./rosey/base.urls.json');
-  const baseURLFileData = JSON.parse(baseURLsFile.toString('utf-8')).keys;
+  const baseFile = await fs.promises.readFile("./rosey/base.json");
+  const baseFileData = JSON.parse(baseFile.toString("utf-8")).keys;
+  const baseURLsFile = await fs.promises.readFile("./rosey/base.urls.json");
+  const baseURLFileData = JSON.parse(baseURLsFile.toString("utf-8")).keys;
 
   const localePath = path.join(localesDirPath, `${locale}.json`);
   const localeURLsPath = path.join(localesDirPath, `${locale}.urls.json`);
@@ -166,10 +166,10 @@ async function generateLocale(locale) {
   await fs.promises.mkdir(localesDirPath, { recursive: true });
 
   const oldLocaleData = JSON.parse(
-    await readFileWithFallback(localePath, '{}')
+    await readFileWithFallback(localePath, "{}")
   );
   const oldURLsLocaleData = JSON.parse(
-    await readFileWithFallback(localeURLsPath, '{}')
+    await readFileWithFallback(localeURLsPath, "{}")
   );
 
   const translationsFiles = await fs.promises.readdir(translationsLocalePath, {
@@ -212,8 +212,8 @@ async function generateLocale(locale) {
       Object.keys(data).forEach((key) => {
         if (!localeData[key] || data[key].isNewTranslation) {
           const isKeyStaticOrMarkdown =
-            key.slice(0, 10).includes('static:') ||
-            key.slice(0, 10).includes('markdown:');
+            key.slice(0, 10).includes("static:") ||
+            key.slice(0, 10).includes("markdown:");
 
           localeData[key] = {
             original: data[key].original,
@@ -234,12 +234,12 @@ async function generateLocale(locale) {
   await Promise.all(
     Object.keys(localeDataEntries).map(async (filename) => {
       const translationFilePath = getTranslationPath(locale, filename);
-      const fileContents = await readFileWithFallback(translationFilePath, '');
+      const fileContents = await readFileWithFallback(translationFilePath, "");
       const data = YAML.parse(fileContents);
 
       let updatedKeys = [];
       Object.keys(keysToUpdate).forEach((key) => {
-        if (data[key] || data[key] === '') {
+        if (data[key] || data[key] === "") {
           data[key] = keysToUpdate[key];
           updatedKeys = [key];
         }
@@ -250,7 +250,7 @@ async function generateLocale(locale) {
         await fs.promises.writeFile(translationFilePath, yamlString);
         console.log(
           `✅ ${translationFilePath} succesfully updated duplicate keys: ${updatedKeys.join(
-            ', '
+            ", "
           )}`
         );
       }
@@ -260,14 +260,14 @@ async function generateLocale(locale) {
   // Write locales data
   await fs.promises.writeFile(
     localePath,
-    JSON.stringify(localeData, null, '\t')
+    JSON.stringify(localeData, null, "\t")
   );
   console.log(`✅✅ ${localePath} updated succesfully`);
 
   // Write locales URL data
   await fs.promises.writeFile(
     localeURLsPath,
-    JSON.stringify(localeURLsData, null, '\t')
+    JSON.stringify(localeURLsData, null, "\t")
   );
   console.log(`✅✅ ${localeURLsPath} updated succesfully`);
 }
@@ -280,7 +280,10 @@ async function generateLocale(locale) {
     try {
       await generateLocale(locale);
     } catch (err) {
-      console.error(`❌❌ Encountered an error translating ${locale}:`, err);
+      console.error(
+        `❌❌ Encountered an error generating locale files for ${locale}:`,
+        err
+      );
     }
   }
 })();

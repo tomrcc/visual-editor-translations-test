@@ -3,8 +3,12 @@ import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import Markdown from "../utility/markdown.astro";
 import slugify from "slugify";
+import RoseyContent from "src/components/utility/roseyContent.astro";
 
 const generateRoseyID = (text: string) => {
+  if (!text) {
+    return "";
+  }
   const lowerCaseText = text.toLowerCase();
   const formattedText = lowerCaseText.replaceAll(
     /(?:__[*#])|\[(.*?)\]\(.*?\)/gm,
@@ -77,34 +81,13 @@ const headingGradientColor = block.heading.heading_gradient_color;
       <h1
         class="heading"
         data-rosey={generateRoseyID(block.heading.heading_text.original)}>
-        {
-          ENV_BOOKSHOP_LIVE &&
-          block.heading.heading_text.selected_translation === "es"
-            ? block.heading.heading_text.es_translation
-            : block.heading.heading_text.original
-        }
+        <RoseyContent content={block.heading.heading_text} />
       </h1>
       <div class="subheading-text" style={`color: ${block.subheading.color};`}>
-        {
-          ENV_BOOKSHOP_LIVE ? (
-            block.subheading.markdown_content.selected_translation === "es" ? (
-              <Markdown
-                content={block.subheading.markdown_content.es_translation}
-                roseyId="hero-subheading"
-              />
-            ) : (
-              <Markdown
-                content={block.subheading.markdown_content.original}
-                roseyId="hero-subheading"
-              />
-            )
-          ) : (
-            <Markdown
-              content={block.subheading.markdown_content.original}
-              roseyId={generateStaticRoseyId("hero-subheading")}
-            />
-          )
-        }
+        <Markdown
+          content={block.subheading.markdown_content}
+          roseyId="hero-subheading"
+        />
       </div>
       <div class="buttons">
         {

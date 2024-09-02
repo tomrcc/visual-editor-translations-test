@@ -1,6 +1,7 @@
 ---
-import Icon from '../../utility/icon';
-import slugify from 'slugify';
+import Icon from "../../utility/icon";
+import slugify from "slugify";
+import RoseyContent from "src/components/utility/roseyContent.astro";
 
 const generateRoseyID = (text: string) => {
   const lowerCaseText = text.toLowerCase();
@@ -11,7 +12,11 @@ const generateRoseyID = (text: string) => {
   return slugify(formattedText, { remove: /[.*,:\/]/g });
 };
 interface Props {
-  button_text: string;
+  button_text: {
+    original: string;
+    selected_translation: string;
+    es_translation: string;
+  };
   button_icon: string;
   button_link: string;
   background_color: string;
@@ -32,8 +37,8 @@ const hover_brightness = block.hover_brightness;
         </span>
       ) : null
     }
-    <span data-rosey={generateRoseyID(block.button_text)}>
-      {block.button_text}
+    <span data-rosey={generateRoseyID(block.button_text.original)}>
+      <RoseyContent content={block.button_text} />
     </span>
   </a>
 </button>
