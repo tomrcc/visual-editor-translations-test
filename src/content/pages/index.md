@@ -2,17 +2,16 @@
 _schema: page
 title: Home
 seo:
-  page_description: >-
-    A starting point for developers looking to build a multilingual website with
-    Astro and Rosey, using Bookshop components in CloudCannon. CloudCannon
-    provides a UI for non-technical editors to enter translations. Create your
-    own copy, and start creating your own components to use in the CloudCannon
-    CMS.
-  canonical_url:
-  featured_image:
-  featured_image_alt:
-  author_twitter_handle:
-  open_graph_type:
+  page_description: A starting point for developers looking to build a
+    multilingual website with Astro and Rosey, using Bookshop components in
+    CloudCannon. CloudCannon provides a UI for non-technical editors to enter
+    translations. Create your own copy, and start creating your own components
+    to use in the CloudCannon CMS.
+  canonical_url: null
+  featured_image: null
+  featured_image_alt: null
+  author_twitter_handle: null
+  open_graph_type: null
   no_index: false
 content_blocks:
   - _bookshop_name: hero
@@ -25,18 +24,18 @@ content_blocks:
       heading_gradient_color: "#a0a2ff"
     subheading:
       markdown_content:
-        original: >-
-          A starting point for **developers looking to build a multilingual
+        original: A starting point for **developers looking to build a multilingual
           website with [Astro](https://astro.build/) and
           [Rosey](https://rosey.app/), using
           [Bookshop](https://github.com/CloudCannon/bookshop)'s component-based
           approach to building and editing sites in CloudCannon**. After a
-          developer has set up the site, CloudCannon provides a user interface for
-          non-technical editors to maintain the site's content and enter
+          developer has set up the site, CloudCannon provides a user interface
+          for non-technical editors to maintain the site's content and enter
           translations. Create your own copy, and start creating your own
           components to use in the CloudCannon CMS.
         selected_translation: None
-        es_translation: A TRANSLATED point TRANSLATED **developers TRANSLATED** to build a TRANSLATED with Astro, using TRANSLATED components in TRANSLATED.
+        es_translation: A TRANSLATED point TRANSLATED **developers TRANSLATED** to build
+          a TRANSLATED with Astro, using TRANSLATED components in TRANSLATED.
       color: "#393939"
     image:
       image_path: /src/assets/images/featured-image-5.jpg
@@ -90,7 +89,7 @@ content_blocks:
         - CSS variables
       color: "#393939"
     media:
-      image_path:
+      image_path: null
       youtube_path: https://www.youtube.com/embed/u5WittUT3Ts?si=BjBfbF-x5MoaAyVO
       alt_text: An image
     flipped: true
@@ -112,18 +111,18 @@ content_blocks:
       heading_gradient_color: "#a0a2ff"
     subheading:
       markdown_content:
-        original: >-
-          A starting point for **developers looking to build a multilingual
+        original: A starting point for **developers looking to build a multilingual
           website with [Astro](https://astro.build/) and
           [Rosey](https://rosey.app/), using
           [Bookshop](https://github.com/CloudCannon/bookshop)'s component-based
           approach to building and editing sites in CloudCannon**. After a
-          developer has set up the site, CloudCannon provides a user interface for
-          non-technical editors to maintain the site's content and enter
+          developer has set up the site, CloudCannon provides a user interface
+          for non-technical editors to maintain the site's content and enter
           translations. Create your own copy, and start creating your own
           components to use in the CloudCannon CMS.
         selected_translation: None
-        es_translation: A TRANSLATED point TRANSLATED **developers TRANSLATED** to build a TRANSLATED with Astro, using TRANSLATED components in TRANSLATED.
+        es_translation: A TRANSLATED point TRANSLATED **developers TRANSLATED** to build
+          a TRANSLATED with Astro, using TRANSLATED components in TRANSLATED.
       color: "#393939"
     image:
       image_path: /src/assets/images/featured-image-5.jpg
@@ -177,7 +176,7 @@ content_blocks:
         - CSS variables
       color: "#393939"
     media:
-      image_path:
+      image_path: null
       youtube_path: https://www.youtube.com/embed/u5WittUT3Ts?si=BjBfbF-x5MoaAyVO
       alt_text: An image
     flipped: true
@@ -189,4 +188,6 @@ content_blocks:
       background_color: "#034AD8"
       hover_brightness: 0.85
       text_color: "#ffffff"
+
 ---
+
