@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+npx @bookshop/generate
 
 if [[ $TRANSLATE != "true" ]];
 then
@@ -18,9 +18,6 @@ then
   node utils/generateLocales.cjs
   echo "🌹Generated locales"
 fi
-
-npx @bookshop/generate
-
 
 if [[ $TRANSLATE == "true" ]];
 then
