@@ -1,8 +1,11 @@
 ---
-import { header } from '../../../data/navigation.json';
-import Icon from '../utility/icon';
-import slugify from 'slugify';
+import { header } from "../../../data/navigation.json";
+import Icon from "../utility/icon";
+import slugify from "slugify";
 const generateRoseyID = (text: string) => {
+  if (!text) {
+    return "";
+  }
   const lowerCaseText = text.toLowerCase();
   const formattedText = lowerCaseText.replaceAll(
     /(?:__[*#])|\[(.*?)\]\(.*?\)/gm,
@@ -10,7 +13,7 @@ const generateRoseyID = (text: string) => {
   );
   return slugify(formattedText, { remove: /[.*,:\/]/g });
 };
-const pagePath = Astro.url.pathname || 'page';
+const pagePath = Astro.url.pathname || "page";
 ---
 
 <header
