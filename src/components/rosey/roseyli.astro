@@ -16,7 +16,7 @@ const { content, classes, styles } = Astro.props;
 ---
 
 <li
-  data-rosey={generateRoseyID(content.original)}
+  data-rosey={generateRoseyID(content.original || content)}
   class={classes}
   style={styles}>
   {

@@ -1,14 +1,6 @@
 {
   "version": 2,
   "keys": {
-    "UvR2WqjzzBQlOdzC8Ay5J46U1U1A/eywc2ABHzSSgj4": {
-      "original": "  ",
-      "value": null,
-      "pages": {
-        "index.html": 2
-      },
-      "total": 2
-    },
     "astro-bookshop-starter": {
       "original": " Astro Bookshop Starter ",
       "value": null,
@@ -31,8 +23,32 @@
       },
       "total": 7
     },
+    "cloudcannon": {
+      "original": " CloudCannon ",
+      "value": null,
+      "pages": {
+        "index.html": 1
+      },
+      "total": 1
+    },
+    "github": {
+      "original": " GitHub ",
+      "value": null,
+      "pages": {
+        "index.html": 2
+      },
+      "total": 2
+    },
     "hero-subheading": {
       "original": "<p>A starting point for <strong>developers looking to build a multilingual website with <a href=\"https://astro.build/\">Astro</a> and <a href=\"https://rosey.app/\">Rosey</a>, using <a href=\"https://github.com/CloudCannon/bookshop\">Bookshop</a>'s component-based approach to building and editing sites in CloudCannon</strong>. After a developer has set up the site, CloudCannon provides a user interface for non-technical editors to maintain the site's content and enter translations. Create your own copy, and start creating your own components to use in the CloudCannon CMS.</p>\n",
+      "value": null,
+      "pages": {
+        "index.html": 2
+      },
+      "total": 2
+    },
+    "keep-what-you-need-delete-the-rest": {
+      "original": "  ",
       "value": null,
       "pages": {
         "index.html": 2
@@ -219,9 +235,9 @@
       "original": "  ",
       "value": null,
       "pages": {
-        "index.html": 6
+        "index.html": 3
       },
-      "total": 6
+      "total": 3
     },
     "rss-feed": {
       "original": " RSS Feed ",

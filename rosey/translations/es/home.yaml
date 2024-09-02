@@ -9,7 +9,8 @@ _inputs:
         - heading: Still to translate (es)
           comment: Text to translate on [](http://localhost:4321/)
           inputs:
-            - UvR2WqjzzBQlOdzC8Ay5J46U1U1A/eywc2ABHzSSgj4
+            - cloudcannon
+            - github
             - hero-subheading
             - left-right-text
             - qrktrBgMTiPGcMSVOTmJ9lJGgkWViU6tyOFzsbTycl4
@@ -18,13 +19,8 @@ _inputs:
           inputs:
             - astro-bookshop-starter
             - blog
+            - keep-what-you-need-delete-the-rest
             - rss-feed
-  UvR2WqjzzBQlOdzC8Ay5J46U1U1A/eywc2ABHzSSgj4:
-    label: ""
-    hidden: true
-    type: text
-    options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=)"
   astro-bookshop-starter:
     label: Astro Bookshop Starter
     hidden: false
@@ -37,6 +33,18 @@ _inputs:
     type: text
     options: {}
     comment: "[See on page](http://localhost:4321/#:~:text=Blog)"
+  cloudcannon:
+    label: CloudCannon
+    hidden: false
+    type: text
+    options: {}
+    comment: "[See on page](http://localhost:4321/#:~:text=CloudCannon)"
+  github:
+    label: GitHub
+    hidden: false
+    type: text
+    options: {}
+    comment: "[See on page](http://localhost:4321/#:~:text=GitHub)"
   hero-subheading:
     label: A starting point for developers looking to...
     hidden: false
@@ -58,6 +66,12 @@ _inputs:
         non-technical editors to maintain the site's content and enter
         translations. Create your own copy, and start creating your own
         components to use in the CloudCannon CMS.
+  keep-what-you-need-delete-the-rest:
+    label: ""
+    hidden: true
+    type: text
+    options: {}
+    comment: "[See on page](http://localhost:4321/#:~:text=)"
   left-right-text:
     label: As well as a translations workflow, some f...
     hidden: false
@@ -109,10 +123,12 @@ _inputs:
     type: text
     options: {}
     comment: "[See on page](http://localhost:4321/#:~:text=RSS%20Feed)"
-UvR2WqjzzBQlOdzC8Ay5J46U1U1A/eywc2ABHzSSgj4: ""
 astro-bookshop-starter: Double checking this is working
 blog: Blog
+cloudcannon: ""
+github: ""
 hero-subheading: ""
+keep-what-you-need-delete-the-rest: This finally showed and is hopefully going to update the frontmatter for the VE
 left-right-text: ""
 qrktrBgMTiPGcMSVOTmJ9lJGgkWViU6tyOFzsbTycl4: ""
 rss-feed: RSS Feed

@@ -297,7 +297,7 @@ const locales = process.env.LOCALES?.toLowerCase().split(",") || ["es"];
       // Combine frontmatter and body content in the correct way then write the file back to src/content/pages
       const pageToWrite = `---\n${YAML.stringify(
         frontmatter
-      )}\n---\n${bodyContent}`;
+      )}\n---\n${bodyContent.trim()}`;
       await fs.promises.writeFile(contentPageFilePath, pageToWrite);
       console.log("✅✅ " + contentPageFilePath + " updated succesfully");
     })
