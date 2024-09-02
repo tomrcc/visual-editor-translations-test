@@ -9,32 +9,17 @@ _inputs:
         - heading: Still to translate (es)
           comment: Text to translate on [](http://localhost:4321/)
           inputs:
-            - 7gkp1Ply37EbMD6pHNZOMKrIxmnDWvfopyAz4G10ITU
-            - 8h/+PUuiehJ9kYU33GQMPxKrmyDyP5YexrL7MQRAIoU
-            - OtiXL6eiX0UO+KLUcREP71QNi02AI+K5CP9rDb+aWM4
-            - fJ5uTxnH3We1GMGCpmu5CgL0Bp+jjK0SF9sfg+BDhaQ
+            - UvR2WqjzzBQlOdzC8Ay5J46U1U1A/eywc2ABHzSSgj4
             - hero-subheading
-            - left-right-text-home-1
-            - left-right-text-home-3
+            - left-right-text
+            - qrktrBgMTiPGcMSVOTmJ9lJGgkWViU6tyOFzsbTycl4
         - heading: Already translated (es)
           comment: Text already translated on [](http://localhost:4321/)
           inputs:
             - astro-bookshop-starter
             - blog
             - rss-feed
-  7gkp1Ply37EbMD6pHNZOMKrIxmnDWvfopyAz4G10ITU:
-    label: ""
-    hidden: false
-    type: textarea
-    options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=)"
-  8h/+PUuiehJ9kYU33GQMPxKrmyDyP5YexrL7MQRAIoU:
-    label: ""
-    hidden: false
-    type: textarea
-    options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=)"
-  OtiXL6eiX0UO+KLUcREP71QNi02AI+K5CP9rDb+aWM4:
+  UvR2WqjzzBQlOdzC8Ay5J46U1U1A/eywc2ABHzSSgj4:
     label: ""
     hidden: true
     type: text
@@ -52,12 +37,6 @@ _inputs:
     type: text
     options: {}
     comment: "[See on page](http://localhost:4321/#:~:text=Blog)"
-  fJ5uTxnH3We1GMGCpmu5CgL0Bp+jjK0SF9sfg+BDhaQ:
-    label: ""
-    hidden: true
-    type: text
-    options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=)"
   hero-subheading:
     label: A starting point for developers looking to...
     hidden: false
@@ -79,7 +58,7 @@ _inputs:
         non-technical editors to maintain the site's content and enter
         translations. Create your own copy, and start creating your own
         components to use in the CloudCannon CMS.
-  left-right-text-home-1:
+  left-right-text:
     label: As well as a translations workflow, some f...
     hidden: false
     type: textarea
@@ -118,58 +97,22 @@ _inputs:
         * CloudCannon configuration
 
         * CSS variables
-  left-right-text-home-3:
-    label: As well as a translations workflow, some f...
-    hidden: false
-    type: textarea
+  qrktrBgMTiPGcMSVOTmJ9lJGgkWViU6tyOFzsbTycl4:
+    label: ""
+    hidden: true
+    type: text
     options: {}
-    comment: "[See on
-      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)"
-    context:
-      open: false
-      title: Untranslated Text
-      icon: translate
-      content: >-
-        As well as a translations workflow, some features come already set up in
-        this template to help you start building components quickly, like:
-
-
-        *
-        [Bookshop](https://cloudcannon.com/documentation/guides/bookshop-astro-guide/)
-
-        * Blog with pagination and tags
-
-        * [Image
-        optimization](https://docs.astro.build/en/guides/images/#image--astroassets)
-
-        * SEO Controls
-
-        * Responsive header and footer
-
-        * [Font Awesome Icons](https://fontawesome.com/search?o=r&m=free)
-
-        * Schemas for adding new pages
-
-        * Editable color pallete
-
-        * Markdown styles
-
-        * CloudCannon configuration
-
-        * CSS variables
+    comment: "[See on page](http://localhost:4321/#:~:text=)"
   rss-feed:
     label: RSS Feed
     hidden: false
     type: text
     options: {}
     comment: "[See on page](http://localhost:4321/#:~:text=RSS%20Feed)"
-7gkp1Ply37EbMD6pHNZOMKrIxmnDWvfopyAz4G10ITU: ""
-8h/+PUuiehJ9kYU33GQMPxKrmyDyP5YexrL7MQRAIoU: ""
-OtiXL6eiX0UO+KLUcREP71QNi02AI+K5CP9rDb+aWM4: ""
+UvR2WqjzzBQlOdzC8Ay5J46U1U1A/eywc2ABHzSSgj4: ""
 astro-bookshop-starter: Try change again via data file
 blog: Blog
-fJ5uTxnH3We1GMGCpmu5CgL0Bp+jjK0SF9sfg+BDhaQ: ""
 hero-subheading: ""
-left-right-text-home-1: ""
-left-right-text-home-3: ""
+left-right-text: ""
+qrktrBgMTiPGcMSVOTmJ9lJGgkWViU6tyOFzsbTycl4: ""
 rss-feed: RSS Feed

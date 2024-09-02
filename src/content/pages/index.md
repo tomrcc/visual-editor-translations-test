@@ -20,7 +20,7 @@ content_blocks:
       heading_text:
         original: Astro Bookshop Starter
         selected_translation: None
-        es_translation: Astro Bookshop Starter Spanish Translation
+        es_translation: Try change again via data file
       heading_gradient_color: "#a0a2ff"
     subheading:
       markdown_content:
@@ -107,7 +107,7 @@ content_blocks:
       heading_text:
         original: Astro Bookshop Starter
         selected_translation: None
-        es_translation: Astro Bookshop Starter Spanish Translation
+        es_translation: Try change again via data file
       heading_gradient_color: "#a0a2ff"
     subheading:
       markdown_content:
@@ -190,6 +190,7 @@ content_blocks:
       text_color: "#ffffff"
 
 ---
+
 
 
 
