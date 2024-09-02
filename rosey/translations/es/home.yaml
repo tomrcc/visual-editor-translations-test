@@ -2,7 +2,7 @@ urlTranslation: index.html
 _inputs:
   $:
     type: object
-    comment: '[See ](http://localhost:4321/)'
+    comment: "[See ](http://localhost:4321/)"
     options:
       place_groups_below: false
       groups:
@@ -20,37 +20,36 @@ _inputs:
             - blog
             - rss-feed
   UvR2WqjzzBQlOdzC8Ay5J46U1U1A/eywc2ABHzSSgj4:
-    label: ''
+    label: ""
     hidden: true
     type: text
     options: {}
-    comment: '[See on page](http://localhost:4321/#:~:text=)'
+    comment: "[See on page](http://localhost:4321/#:~:text=)"
   astro-bookshop-starter:
     label: Astro Bookshop Starter
     hidden: false
     type: textarea
     options: {}
-    comment: '[See on page](http://localhost:4321/#:~:text=Astro%20Bookshop%20Starter)'
+    comment: "[See on page](http://localhost:4321/#:~:text=Astro%20Bookshop%20Starter)"
   blog:
     label: Blog
     hidden: false
     type: text
     options: {}
-    comment: '[See on page](http://localhost:4321/#:~:text=Blog)'
+    comment: "[See on page](http://localhost:4321/#:~:text=Blog)"
   hero-subheading:
     label: A starting point for developers looking to...
     hidden: false
     type: textarea
     options: {}
-    comment: >-
-      [See on
-      page](http://localhost:4321/#:~:text=A%20starting%20point,the%20CloudCannon%20CMS)
+    comment: "[See on
+      page](http://localhost:4321/#:~:text=A%20starting%20point,the%20CloudCann\
+      on%20CMS)"
     context:
       open: false
       title: Untranslated Text
       icon: translate
-      content: >-
-        A starting point for **developers looking to build a multilingual
+      content: A starting point for **developers looking to build a multilingual
         website with [Astro](https://astro.build/) and
         [Rosey](https://rosey.app/), using
         [Bookshop](https://github.com/CloudCannon/bookshop)'s component-based
@@ -64,9 +63,8 @@ _inputs:
     hidden: false
     type: textarea
     options: {}
-    comment: >-
-      [See on
-      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)
+    comment: "[See on
+      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)"
     context:
       open: false
       title: Untranslated Text
@@ -100,21 +98,21 @@ _inputs:
 
         * CSS variables
   qrktrBgMTiPGcMSVOTmJ9lJGgkWViU6tyOFzsbTycl4:
-    label: ''
+    label: ""
     hidden: true
     type: text
     options: {}
-    comment: '[See on page](http://localhost:4321/#:~:text=)'
+    comment: "[See on page](http://localhost:4321/#:~:text=)"
   rss-feed:
     label: RSS Feed
     hidden: false
     type: text
     options: {}
-    comment: '[See on page](http://localhost:4321/#:~:text=RSS%20Feed)'
-UvR2WqjzzBQlOdzC8Ay5J46U1U1A/eywc2ABHzSSgj4: ''
+    comment: "[See on page](http://localhost:4321/#:~:text=RSS%20Feed)"
+UvR2WqjzzBQlOdzC8Ay5J46U1U1A/eywc2ABHzSSgj4: ""
 astro-bookshop-starter: Double checking this is working
 blog: Blog
-hero-subheading: ''
-left-right-text: ''
-qrktrBgMTiPGcMSVOTmJ9lJGgkWViU6tyOFzsbTycl4: ''
+hero-subheading: ""
+left-right-text: ""
+qrktrBgMTiPGcMSVOTmJ9lJGgkWViU6tyOFzsbTycl4: ""
 rss-feed: RSS Feed
