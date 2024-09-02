@@ -9,19 +9,37 @@ _inputs:
         - heading: Still to translate (es)
           comment: Text to translate on [](http://localhost:4321/)
           inputs:
+            - 7gkp1Ply37EbMD6pHNZOMKrIxmnDWvfopyAz4G10ITU
+            - 8h/+PUuiehJ9kYU33GQMPxKrmyDyP5YexrL7MQRAIoU
+            - OtiXL6eiX0UO+KLUcREP71QNi02AI+K5CP9rDb+aWM4
             - astro-bookshop-starter
-            - static:hero-subheading-home-2
-            - static:left-right-text-home-3
+            - fJ5uTxnH3We1GMGCpmu5CgL0Bp+jjK0SF9sfg+BDhaQ
+            - hero-subheading
+            - left-right-text-home-1
+            - left-right-text-home-3
         - heading: Already translated (es)
           comment: Text already translated on [](http://localhost:4321/)
           inputs:
             - blog
-            - cloudcannon
-            - github
-            - keep-what-you-need-delete-the-rest
             - rss-feed
-            - static:hero-subheading-home-1
-            - static:left-right-text-home-1
+  7gkp1Ply37EbMD6pHNZOMKrIxmnDWvfopyAz4G10ITU:
+    label: ""
+    hidden: false
+    type: textarea
+    options: {}
+    comment: "[See on page](http://localhost:4321/#:~:text=)"
+  8h/+PUuiehJ9kYU33GQMPxKrmyDyP5YexrL7MQRAIoU:
+    label: ""
+    hidden: false
+    type: textarea
+    options: {}
+    comment: "[See on page](http://localhost:4321/#:~:text=)"
+  OtiXL6eiX0UO+KLUcREP71QNi02AI+K5CP9rDb+aWM4:
+    label: ""
+    hidden: true
+    type: text
+    options: {}
+    comment: "[See on page](http://localhost:4321/#:~:text=)"
   astro-bookshop-starter:
     label: Astro Bookshop Starter
     hidden: false
@@ -34,257 +52,124 @@ _inputs:
     type: text
     options: {}
     comment: "[See on page](http://localhost:4321/#:~:text=Blog)"
-  cloudcannon:
-    label: CloudCannon
-    hidden: false
+  fJ5uTxnH3We1GMGCpmu5CgL0Bp+jjK0SF9sfg+BDhaQ:
+    label: ""
+    hidden: true
     type: text
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=CloudCannon)"
-  github:
-    label: GitHub
-    hidden: false
-    type: text
-    options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=GitHub)"
-  keep-what-you-need-delete-the-rest:
-    label: Keep what you need. Delete the rest.
+    comment: "[See on page](http://localhost:4321/#:~:text=)"
+  hero-subheading:
+    label: A starting point for developers looking to...
     hidden: false
     type: textarea
     options: {}
     comment: "[See on
-      page](http://localhost:4321/#:~:text=Keep%20what%20you,Delete%20the%20res\
-      t)"
+      page](http://localhost:4321/#:~:text=A%20starting%20point,the%20CloudCann\
+      on%20CMS)"
+    context:
+      open: false
+      title: Untranslated Text
+      icon: translate
+      content: A starting point for **developers looking to build a multilingual
+        website with [Astro](https://astro.build/) and
+        [Rosey](https://rosey.app/), using
+        [Bookshop](https://github.com/CloudCannon/bookshop)'s component-based
+        approach to building and editing sites in CloudCannon**. After a
+        developer has set up the site, CloudCannon provides a user interface for
+        non-technical editors to maintain the site's content and enter
+        translations. Create your own copy, and start creating your own
+        components to use in the CloudCannon CMS.
+  left-right-text-home-1:
+    label: As well as a translations workflow, some f...
+    hidden: false
+    type: textarea
+    options: {}
+    comment: "[See on
+      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)"
+    context:
+      open: false
+      title: Untranslated Text
+      icon: translate
+      content: >-
+        As well as a translations workflow, some features come already set up in
+        this template to help you start building components quickly, like:
+
+
+        *
+        [Bookshop](https://cloudcannon.com/documentation/guides/bookshop-astro-guide/)
+
+        * Blog with pagination and tags
+
+        * [Image
+        optimization](https://docs.astro.build/en/guides/images/#image--astroassets)
+
+        * SEO Controls
+
+        * Responsive header and footer
+
+        * [Font Awesome Icons](https://fontawesome.com/search?o=r&m=free)
+
+        * Schemas for adding new pages
+
+        * Editable color pallete
+
+        * Markdown styles
+
+        * CloudCannon configuration
+
+        * CSS variables
+  left-right-text-home-3:
+    label: As well as a translations workflow, some f...
+    hidden: false
+    type: textarea
+    options: {}
+    comment: "[See on
+      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)"
+    context:
+      open: false
+      title: Untranslated Text
+      icon: translate
+      content: >-
+        As well as a translations workflow, some features come already set up in
+        this template to help you start building components quickly, like:
+
+
+        *
+        [Bookshop](https://cloudcannon.com/documentation/guides/bookshop-astro-guide/)
+
+        * Blog with pagination and tags
+
+        * [Image
+        optimization](https://docs.astro.build/en/guides/images/#image--astroassets)
+
+        * SEO Controls
+
+        * Responsive header and footer
+
+        * [Font Awesome Icons](https://fontawesome.com/search?o=r&m=free)
+
+        * Schemas for adding new pages
+
+        * Editable color pallete
+
+        * Markdown styles
+
+        * CloudCannon configuration
+
+        * CSS variables
   rss-feed:
     label: RSS Feed
     hidden: false
     type: text
     options: {}
     comment: "[See on page](http://localhost:4321/#:~:text=RSS%20Feed)"
-  static:hero-subheading-home-1:
-    label: A starting point for developers looking to...
-    hidden: false
-    type: markdown
-    options:
-      bold: true
-      format: p h1 h2 h3 h4
-      italic: true
-      link: true
-      undo: true
-      redo: true
-      removeformat: true
-      copyformatting: true
-      bulletedlist: true
-      numberedlist: true
-      blockquote: true
-      superscript: true
-      subscript: true
-      code: true
-      horizontalrule: true
-      image: true
-    comment: "[See on
-      page](http://localhost:4321/#:~:text=A%20starting%20point,the%20CloudCann\
-      on%20CMS)"
-    context:
-      open: false
-      title: Untranslated Text
-      icon: translate
-      content: A starting point for **developers looking to build a multilingual
-        website with [Astro](https://astro.build/) and
-        [Rosey](https://rosey.app/), using
-        [Bookshop](https://github.com/CloudCannon/bookshop)'s component-based
-        approach to building and editing sites in CloudCannon**. After a
-        developer has set up the site, CloudCannon provides a user interface for
-        non-technical editors to maintain the site's content and enter
-        translations. Create your own copy, and start creating your own
-        components to use in the CloudCannon CMS.
-  static:hero-subheading-home-2:
-    label: A starting point for developers looking to...
-    hidden: false
-    type: markdown
-    options:
-      bold: true
-      format: p h1 h2 h3 h4
-      italic: true
-      link: true
-      undo: true
-      redo: true
-      removeformat: true
-      copyformatting: true
-      bulletedlist: true
-      numberedlist: true
-      blockquote: true
-      superscript: true
-      subscript: true
-      code: true
-      horizontalrule: true
-      image: true
-    comment: "[See on
-      page](http://localhost:4321/#:~:text=A%20starting%20point,the%20CloudCann\
-      on%20CMS)"
-    context:
-      open: false
-      title: Untranslated Text
-      icon: translate
-      content: A starting point for **developers looking to build a multilingual
-        website with [Astro](https://astro.build/) and
-        [Rosey](https://rosey.app/), using
-        [Bookshop](https://github.com/CloudCannon/bookshop)'s component-based
-        approach to building and editing sites in CloudCannon**. After a
-        developer has set up the site, CloudCannon provides a user interface for
-        non-technical editors to maintain the site's content and enter
-        translations. Create your own copy, and start creating your own
-        components to use in the CloudCannon CMS.
-  static:left-right-text-home-1:
-    label: As well as a translations workflow, some f...
-    hidden: false
-    type: markdown
-    options:
-      bold: true
-      format: p h1 h2 h3 h4
-      italic: true
-      link: true
-      undo: true
-      redo: true
-      removeformat: true
-      copyformatting: true
-      bulletedlist: true
-      numberedlist: true
-      blockquote: true
-      superscript: true
-      subscript: true
-      code: true
-      horizontalrule: true
-      image: true
-    comment: "[See on
-      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)"
-    context:
-      open: false
-      title: Untranslated Text
-      icon: translate
-      content: >-
-        As well as a translations workflow, some features come already set up in
-        this template to help you start building components quickly, like:
-
-
-        *
-        [Bookshop](https://cloudcannon.com/documentation/guides/bookshop-astro-guide/)
-
-        * Blog with pagination and tags
-
-        * [Image
-        optimization](https://docs.astro.build/en/guides/images/#image--astroassets)
-
-        * SEO Controls
-
-        * Responsive header and footer
-
-        * [Font Awesome Icons](https://fontawesome.com/search?o=r&m=free)
-
-        * Schemas for adding new pages
-
-        * Editable color pallete
-
-        * Markdown styles
-
-        * CloudCannon configuration
-
-        * CSS variables
-  static:left-right-text-home-3:
-    label: As well as a translations workflow, some f...
-    hidden: false
-    type: markdown
-    options:
-      bold: true
-      format: p h1 h2 h3 h4
-      italic: true
-      link: true
-      undo: true
-      redo: true
-      removeformat: true
-      copyformatting: true
-      bulletedlist: true
-      numberedlist: true
-      blockquote: true
-      superscript: true
-      subscript: true
-      code: true
-      horizontalrule: true
-      image: true
-    comment: "[See on
-      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)"
-    context:
-      open: false
-      title: Untranslated Text
-      icon: translate
-      content: >-
-        As well as a translations workflow, some features come already set up in
-        this template to help you start building components quickly, like:
-
-
-        *
-        [Bookshop](https://cloudcannon.com/documentation/guides/bookshop-astro-guide/)
-
-        * Blog with pagination and tags
-
-        * [Image
-        optimization](https://docs.astro.build/en/guides/images/#image--astroassets)
-
-        * SEO Controls
-
-        * Responsive header and footer
-
-        * [Font Awesome Icons](https://fontawesome.com/search?o=r&m=free)
-
-        * Schemas for adding new pages
-
-        * Editable color pallete
-
-        * Markdown styles
-
-        * CloudCannon configuration
-
-        * CSS variables
+7gkp1Ply37EbMD6pHNZOMKrIxmnDWvfopyAz4G10ITU: ""
+8h/+PUuiehJ9kYU33GQMPxKrmyDyP5YexrL7MQRAIoU: ""
+OtiXL6eiX0UO+KLUcREP71QNi02AI+K5CP9rDb+aWM4: ""
 astro-bookshop-starter: ""
 blog: Blog
-cloudcannon: CloudCannon
-github: GitHub
-keep-what-you-need-delete-the-rest: Conserva lo que necesitas. Elimina el resto.
+fJ5uTxnH3We1GMGCpmu5CgL0Bp+jjK0SF9sfg+BDhaQ: ""
+hero-subheading: ""
+left-right-text-home-1: ""
+left-right-text-home-3: ""
 rss-feed: RSS Feed
-static:hero-subheading-home-1: Un punto de partida para **desarrolladores que
-  buscan crear un sitio web multilingüe con Astro y Rosey, utilizando
-  componentes de Bookshop en CloudCannon**. CloudCannon proporciona una interfaz
-  de usuario para que los editores no técnicos ingresen traducciones. Cree su
-  propia copia y comience a crear sus propios componentes para usar en
-  CloudCannon CMS.
-static:hero-subheading-home-2: ""
-static:left-right-text-home-1: >-
-  Para ayudarle a ahorrar tiempo, algunas funciones están configuradas en esta
-  plantilla, como:
-
-
-  *
-  [Bookshop](https://cloudcannon.com/documentation/guides/bookshop-astro-guide/)
-
-  * Blog con paginación, etiquetas y
-  [snippets](https://docs.astro.build/en/guides/markdown-content/#using-components-in-mdx).
-
-  * <a href="https://docs.astro.build/en/guides/images/#image--astroassets"
-  target="_blank" rel="noopener">Optimización de imagen</a>
-
-  * Controles de SEO
-
-  * Encabezado y pie de página responsivos
-
-  * <a href="https://fontawesome.com/search?o=r&amp;m=free" target="_blank"
-  rel="noopener">Font Awesome Icons</a>
-
-  * Esquemas para agregar nuevas páginas
-
-  * Paleta de colores editable
-
-  * Estilos de rebajas
-
-  * Configuración de CloudCannon
-
-  * Variables CSS
-static:left-right-text-home-3: ""
