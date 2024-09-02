@@ -2,7 +2,7 @@ urlTranslation: index.html
 _inputs:
   $:
     type: object
-    comment: "[See ](http://localhost:4321/)"
+    comment: '[See ](http://localhost:4321/)'
     options:
       place_groups_below: false
       groups:
@@ -23,54 +23,55 @@ _inputs:
             - blog
             - rss-feed
   7gkp1Ply37EbMD6pHNZOMKrIxmnDWvfopyAz4G10ITU:
-    label: ""
+    label: ''
     hidden: false
     type: textarea
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=)"
+    comment: '[See on page](http://localhost:4321/#:~:text=)'
   8h/+PUuiehJ9kYU33GQMPxKrmyDyP5YexrL7MQRAIoU:
-    label: ""
+    label: ''
     hidden: false
     type: textarea
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=)"
+    comment: '[See on page](http://localhost:4321/#:~:text=)'
   OtiXL6eiX0UO+KLUcREP71QNi02AI+K5CP9rDb+aWM4:
-    label: ""
+    label: ''
     hidden: true
     type: text
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=)"
+    comment: '[See on page](http://localhost:4321/#:~:text=)'
   astro-bookshop-starter:
     label: Astro Bookshop Starter
     hidden: false
     type: textarea
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=Astro%20Bookshop%20Starter)"
+    comment: '[See on page](http://localhost:4321/#:~:text=Astro%20Bookshop%20Starter)'
   blog:
     label: Blog
     hidden: false
     type: text
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=Blog)"
+    comment: '[See on page](http://localhost:4321/#:~:text=Blog)'
   fJ5uTxnH3We1GMGCpmu5CgL0Bp+jjK0SF9sfg+BDhaQ:
-    label: ""
+    label: ''
     hidden: true
     type: text
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=)"
+    comment: '[See on page](http://localhost:4321/#:~:text=)'
   hero-subheading:
     label: A starting point for developers looking to...
     hidden: false
     type: textarea
     options: {}
-    comment: "[See on
-      page](http://localhost:4321/#:~:text=A%20starting%20point,the%20CloudCann\
-      on%20CMS)"
+    comment: >-
+      [See on
+      page](http://localhost:4321/#:~:text=A%20starting%20point,the%20CloudCannon%20CMS)
     context:
       open: false
       title: Untranslated Text
       icon: translate
-      content: A starting point for **developers looking to build a multilingual
+      content: >-
+        A starting point for **developers looking to build a multilingual
         website with [Astro](https://astro.build/) and
         [Rosey](https://rosey.app/), using
         [Bookshop](https://github.com/CloudCannon/bookshop)'s component-based
@@ -84,8 +85,9 @@ _inputs:
     hidden: false
     type: textarea
     options: {}
-    comment: "[See on
-      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)"
+    comment: >-
+      [See on
+      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)
     context:
       open: false
       title: Untranslated Text
@@ -123,8 +125,9 @@ _inputs:
     hidden: false
     type: textarea
     options: {}
-    comment: "[See on
-      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)"
+    comment: >-
+      [See on
+      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)
     context:
       open: false
       title: Untranslated Text
@@ -162,14 +165,14 @@ _inputs:
     hidden: false
     type: text
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=RSS%20Feed)"
-7gkp1Ply37EbMD6pHNZOMKrIxmnDWvfopyAz4G10ITU: ""
-8h/+PUuiehJ9kYU33GQMPxKrmyDyP5YexrL7MQRAIoU: ""
-OtiXL6eiX0UO+KLUcREP71QNi02AI+K5CP9rDb+aWM4: ""
-astro-bookshop-starter: This has changed via the data file
+    comment: '[See on page](http://localhost:4321/#:~:text=RSS%20Feed)'
+7gkp1Ply37EbMD6pHNZOMKrIxmnDWvfopyAz4G10ITU: ''
+8h/+PUuiehJ9kYU33GQMPxKrmyDyP5YexrL7MQRAIoU: ''
+OtiXL6eiX0UO+KLUcREP71QNi02AI+K5CP9rDb+aWM4: ''
+astro-bookshop-starter: Try change again via data file
 blog: Blog
-fJ5uTxnH3We1GMGCpmu5CgL0Bp+jjK0SF9sfg+BDhaQ: ""
-hero-subheading: ""
-left-right-text-home-1: ""
-left-right-text-home-3: ""
+fJ5uTxnH3We1GMGCpmu5CgL0Bp+jjK0SF9sfg+BDhaQ: ''
+hero-subheading: ''
+left-right-text-home-1: ''
+left-right-text-home-3: ''
 rss-feed: RSS Feed
