@@ -20,12 +20,11 @@ content_blocks:
       heading_text:
         original: Astro Bookshop Starter
         selected_translation: None
-        es_translation: Double checking this is working
+        es_translation: Changed again (ES)
       heading_gradient_color: "#a0a2ff"
     subheading:
       markdown_content:
-        original:
-          A starting point for **developers looking to build a multilingual
+        original: A starting point for **developers looking to build a multilingual
           website with [Astro](https://astro.build/) and
           [Rosey](https://rosey.app/), using
           [Bookshop](https://github.com/CloudCannon/bookshop)'s component-based
@@ -35,8 +34,7 @@ content_blocks:
           translations. Create your own copy, and start creating your own
           components to use in the CloudCannon CMS.
         selected_translation: None
-        es_translation:
-          A TRANSLATED point TRANSLATED **developers TRANSLATED** to build
+        es_translation: A TRANSLATED point TRANSLATED **developers TRANSLATED** to build
           a TRANSLATED with Astro, using TRANSLATED components in TRANSLATED.
       color: "#393939"
     image:
@@ -58,7 +56,10 @@ content_blocks:
           selected_translation: None
           original: CloudCannon
           es_translation: ""
-        button_icon: CloudCannon
+        button_icon:
+          selected_translation: None
+          original: CloudCannon
+          es_translation: ""
         button_link: https://www.cloudcannon.com
         text_color: "#034AD8"
         hover_brightness: 0.95
@@ -68,7 +69,7 @@ content_blocks:
       heading_text:
         original: Keep what you need. Delete the rest.
         selected_translation: None
-        es_translation: ""
+        es_translation: Does this work (ES)
       color: "#393939"
     text:
       markdown_content: >-
@@ -115,4 +116,5 @@ content_blocks:
       background_color: "#034AD8"
       hover_brightness: 0.85
       text_color: "#ffffff"
+
 ---
