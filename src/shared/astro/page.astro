@@ -24,15 +24,11 @@ const { contentBlocks, selected_visual_editor_translation } = Astro.props;
   {
     contentBlocks.map((block, i) => {
       const Component = components[block._bookshop_name];
-      return (
-        <Component
-          {...block}
-          selected_visual_editor_translation={
-            selected_visual_editor_translation
-          }
-          key={i}
-        />
-      );
+      const blockWithSVET: object = {
+        selected_visual_editor_translation: selected_visual_editor_translation,
+        ...block,
+      };
+      return <Component {...blockWithSVET} key={i} />;
     })
   }
 </main>
