@@ -6,6 +6,7 @@ import Markdown from "../utility/markdown.astro";
 import Roseyh2 from "../rosey/roseyh2.astro";
 
 interface Props {
+  selected_visual_editor_translation: string;
   background_color: string;
   flipped: boolean;
   heading: {
@@ -84,6 +85,9 @@ const headingStyle = `color: ${block.heading.color};`;
             content={block.heading.heading_text}
             classes="text-4xl"
             styles={headingStyle}
+            selected_visual_editor_translation={
+              block.selected_visual_editor_translation
+            }
           />
           <div class="mb-4" style={`color: ${block.text.color};`}>
             <Markdown
@@ -101,6 +105,9 @@ const headingStyle = `color: ${block.heading.color};`;
             content={block.heading.heading_text}
             classes="text-4xl"
             styles={headingStyle}
+            selected_visual_editor_translation={
+              block.selected_visual_editor_translation
+            }
           />
           <div class="mb-4" style={`color: ${block.text.color};`}>
             <Markdown

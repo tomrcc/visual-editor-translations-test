@@ -139,6 +139,12 @@ _inputs:
       values:
         - None
         - es
+  selected_visual_editor_translation:
+    type: select
+    options:
+      values:
+        - None
+        - es
   markdown_content:
     type: markdown
     options: *markdown_options

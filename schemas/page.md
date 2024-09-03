@@ -8,5 +8,6 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
+selected_visual_editor_translation: None
 content_blocks: []
 ---

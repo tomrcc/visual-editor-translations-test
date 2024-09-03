@@ -12,7 +12,8 @@ const generateRoseyID = (text: string) => {
   );
   return slugify(formattedText, { remove: /[.*,:\/]/g });
 };
-const { content, classes, styles } = Astro.props;
+const { content, classes, styles, selected_visual_editor_translation } =
+  Astro.props;
 ---
 
 <h1
@@ -20,7 +21,9 @@ const { content, classes, styles } = Astro.props;
   class={classes}
   style={styles}>
   {
-    ENV_BOOKSHOP_LIVE && content.selected_translation === "es"
+    ENV_BOOKSHOP_LIVE &&
+    (content.selected_translation === "es" ||
+      selected_visual_editor_translation === "es")
       ? content.es_translation
       : content.original
   }

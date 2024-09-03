@@ -6,6 +6,7 @@ type Props = {
   frontmatter: {
     title: string;
     content_blocks?: any[];
+    selected_visual_editor_translation?: string;
     page_size?: number;
     seo?: SEOProps;
   };
@@ -15,5 +16,10 @@ const props = Astro.props.frontmatter;
 ---
 
 <Layout {...props}>
-  <PageHelper bookshop:live contentBlocks={props.content_blocks ?? []} />
+  <PageHelper
+    bookshop:live
+    contentBlocks={props.content_blocks ?? []}
+    selectedVisualEditorTranslation={props.selected_visual_editor_translation ??
+      "None"}
+  />
 </Layout>

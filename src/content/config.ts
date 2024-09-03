@@ -29,6 +29,7 @@ const blogCollection = defineCollection({
 const pageSchema = z.object({
   title: z.string(),
   content_blocks: z.array(z.any()),
+  selected_visual_editor_translation: z.string(),
   seo: seoSchema,
 });
 
