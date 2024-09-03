@@ -20,7 +20,7 @@ content_blocks:
       heading_text:
         original: Astro Bookshop Starter
         selected_translation: None
-        es_translation: (ES)Visual Translator changed w/o syncpath but with moved generate(ES)
+        es_translation: (ES)Rosey CC Connector ft. Visual Editor(ES)
       heading_gradient_color: "#a0a2ff"
     subheading:
       markdown_content:
