@@ -20,7 +20,7 @@ content_blocks:
       heading_text:
         original: Astro Bookshop Starter
         selected_translation: None
-        es_translation: Changed again (ES)
+        es_translation: (ES)Visual Translator Demo(ES)
       heading_gradient_color: "#a0a2ff"
     subheading:
       markdown_content:
@@ -45,7 +45,7 @@ content_blocks:
         button_text:
           selected_translation: None
           original: GitHub
-          es_translation: ""
+          es_translation: (ES)Button Translated
         button_icon: Github
         button_link: https://github.com/cloudCannon/rosey-astro-starter
         background_color: "#034AD8"
@@ -55,11 +55,11 @@ content_blocks:
         button_text:
           selected_translation: None
           original: CloudCannon
-          es_translation: ""
+          es_translation: (ES)Button Translated
         button_icon:
           selected_translation: None
           original: CloudCannon
-          es_translation: ""
+          es_translation: (ES)Button Translated
         button_link: https://www.cloudcannon.com
         text_color: "#034AD8"
         hover_brightness: 0.95
@@ -69,7 +69,7 @@ content_blocks:
       heading_text:
         original: Keep what you need. Delete the rest.
         selected_translation: None
-        es_translation: Does this work (ES)
+        es_translation: (ES)Demoing a different heading(ES)
       color: "#393939"
     text:
       markdown_content: >-
@@ -110,7 +110,7 @@ content_blocks:
       button_text:
         selected_translation: None
         original: GitHub
-        es_translation: ""
+        es_translation: (ES)Button Translated
       button_icon: Github
       button_link: https://github.com/cloudCannon/rosey-astro-starter
       background_color: "#034AD8"
