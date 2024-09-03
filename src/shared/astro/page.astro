@@ -1,7 +1,7 @@
 ---
 export interface Props {
   contentBlocks: any[];
-  selectedVisualEditorTranslation: string;
+  selected_visual_editor_translation: string;
 }
 
 const components: Record<string, Function> = {};
@@ -17,7 +17,7 @@ Object.entries(componentImports).forEach(([path, obj]) => {
   components[bookshopName] = (obj as any).default;
 });
 
-const { contentBlocks, selectedVisualEditorTranslation } = Astro.props;
+const { contentBlocks, selected_visual_editor_translation } = Astro.props;
 ---
 
 <main>
@@ -27,7 +27,9 @@ const { contentBlocks, selectedVisualEditorTranslation } = Astro.props;
       return (
         <Component
           {...block}
-          selected_visual_editor_translation={selectedVisualEditorTranslation}
+          selected_visual_editor_translation={
+            selected_visual_editor_translation
+          }
           key={i}
         />
       );
