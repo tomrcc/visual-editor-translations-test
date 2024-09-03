@@ -8,7 +8,9 @@ _inputs:
       groups:
         - heading: Still to translate (es)
           comment: Text to translate on [](http://localhost:4321/)
-          inputs: []
+          inputs:
+            - markdownhero-subheading
+            - markdownleft-right-text
         - heading: Already translated (es)
           comment: Text already translated on [](http://localhost:4321/)
           inputs:
@@ -16,9 +18,7 @@ _inputs:
             - blog
             - cloudcannon
             - github
-            - hero-subheading
             - keep-what-you-need-delete-the-rest
-            - left-right-text
             - rss-feed
   astro-bookshop-starter:
     label: Astro Bookshop Starter
@@ -44,7 +44,15 @@ _inputs:
     type: text
     options: {}
     comment: "[See on page](http://localhost:4321/#:~:text=GitHub)"
-  hero-subheading:
+  keep-what-you-need-delete-the-rest:
+    label: Keep what you need. Delete the rest.
+    hidden: false
+    type: textarea
+    options: {}
+    comment: "[See on
+      page](http://localhost:4321/#:~:text=Keep%20what%20you,Delete%20the%20res\
+      t)"
+  markdownhero-subheading:
     label: A starting point for developers looking to...
     hidden: false
     type: textarea
@@ -65,15 +73,7 @@ _inputs:
         non-technical editors to maintain the site's content and enter
         translations. Create your own copy, and start creating your own
         components to use in the CloudCannon CMS.
-  keep-what-you-need-delete-the-rest:
-    label: Keep what you need. Delete the rest.
-    hidden: false
-    type: textarea
-    options: {}
-    comment: "[See on
-      page](http://localhost:4321/#:~:text=Keep%20what%20you,Delete%20the%20res\
-      t)"
-  left-right-text:
+  markdownleft-right-text:
     label: As well as a translations workflow, some f...
     hidden: false
     type: textarea
@@ -122,10 +122,7 @@ astro-bookshop-starter: (ES)Rosey CC Connector ft. Visual Editor(ES)
 blog: Blog
 cloudcannon: (ES)Button Translated
 github: (ES)Button Translated
-hero-subheading: A demo of keeping the visual editor n'sync with the data file
-  to allow editors visual previews of their translations.
 keep-what-you-need-delete-the-rest: (ES)This is translated in the data file(ES)
-left-right-text: Una demostración de cómo mantener el editor visual sincronizado
-  con el archivo de datos para permitir a los editores vistas previas visuales
-  de sus traducciones.
+markdownhero-subheading: ""
+markdownleft-right-text: ""
 rss-feed: RSS Feed
