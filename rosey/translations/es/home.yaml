@@ -2,7 +2,7 @@ urlTranslation: index.html
 _inputs:
   $:
     type: object
-    comment: "[See ](http://localhost:4321/)"
+    comment: '[See ](http://localhost:4321/)'
     options:
       place_groups_below: false
       groups:
@@ -25,38 +25,39 @@ _inputs:
     hidden: false
     type: textarea
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=Astro%20Bookshop%20Starter)"
+    comment: '[See on page](http://localhost:4321/#:~:text=Astro%20Bookshop%20Starter)'
   blog:
     label: Blog
     hidden: false
     type: text
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=Blog)"
+    comment: '[See on page](http://localhost:4321/#:~:text=Blog)'
   cloudcannon:
     label: CloudCannon
     hidden: false
     type: text
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=CloudCannon)"
+    comment: '[See on page](http://localhost:4321/#:~:text=CloudCannon)'
   github:
     label: GitHub
     hidden: false
     type: text
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=GitHub)"
+    comment: '[See on page](http://localhost:4321/#:~:text=GitHub)'
   hero-subheading:
     label: A starting point for developers looking to...
     hidden: false
     type: textarea
     options: {}
-    comment: "[See on
-      page](http://localhost:4321/#:~:text=A%20starting%20point,the%20CloudCann\
-      on%20CMS)"
+    comment: >-
+      [See on
+      page](http://localhost:4321/#:~:text=A%20starting%20point,the%20CloudCannon%20CMS)
     context:
       open: false
       title: Untranslated Text
       icon: translate
-      content: A starting point for **developers looking to build a multilingual
+      content: >-
+        A starting point for **developers looking to build a multilingual
         website with [Astro](https://astro.build/) and
         [Rosey](https://rosey.app/), using
         [Bookshop](https://github.com/CloudCannon/bookshop)'s component-based
@@ -70,16 +71,17 @@ _inputs:
     hidden: false
     type: textarea
     options: {}
-    comment: "[See on
-      page](http://localhost:4321/#:~:text=Keep%20what%20you,Delete%20the%20res\
-      t)"
+    comment: >-
+      [See on
+      page](http://localhost:4321/#:~:text=Keep%20what%20you,Delete%20the%20rest)
   left-right-text:
     label: As well as a translations workflow, some f...
     hidden: false
     type: textarea
     options: {}
-    comment: "[See on
-      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)"
+    comment: >-
+      [See on
+      page](http://localhost:4321/#:~:text=As%20well%20as,CSS%20variables)
     context:
       open: false
       title: Untranslated Text
@@ -117,12 +119,12 @@ _inputs:
     hidden: false
     type: text
     options: {}
-    comment: "[See on page](http://localhost:4321/#:~:text=RSS%20Feed)"
-astro-bookshop-starter: (ES)Visual Translator without syncpath(ES)
+    comment: '[See on page](http://localhost:4321/#:~:text=RSS%20Feed)'
+astro-bookshop-starter: (ES)Visual Translator changed w/o syncpath but with moved generate(ES)
 blog: Blog
 cloudcannon: (ES)Button Translated
 github: (ES)Button Translated
-hero-subheading: ""
+hero-subheading: ''
 keep-what-you-need-delete-the-rest: (ES)Demoing a different heading(ES)
-left-right-text: ""
+left-right-text: ''
 rss-feed: RSS Feed
