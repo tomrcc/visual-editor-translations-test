@@ -69,7 +69,7 @@ content_blocks:
       heading_text:
         original: Keep what you need. Delete the rest.
         selected_translation: None
-        es_translation: (ES)Demoing a different heading(ES)
+        es_translation: (ES)This is translated in the data file(ES)
       color: "#393939"
     text:
       markdown_content: >-
